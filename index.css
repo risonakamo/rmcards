@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@font-face
+{
+    font-family: "noto-reg";
+    src: url("noto-reg.otf");
+}
+
+@font-face
+{
+    font-family: "noto-bold";
+    src: url("noto-bold.otf");
+}
+
+html,body
+{
+    height: 100%;
+}
+
+body
+{
+    margin: 0;
+    background-color: #2a3436;
+    font-family: "noto-reg";
+    color: rgba(255,255,255,.8);
+    font-size: 0;
+}
+
+.img-zone,.info-zone
+{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.img-zone img
+{
+    width: 100%;
+    height: auto;
+}
+
+.info-box
+{
+    width: 100%;
+    min-height: 100px;
+}
+
+.info-box .info-label,.info-box .info-text
+{
+    padding-left: 14px;
+    box-sizing: border-box;
+}
+
+.info-box .info-label
+{
+    height: 35px;
+    font-size: 20px;
+}
+
+.info-label .label
+{
+    border-bottom: 4px solid rgba(255,255,255,.8);
+}
+
+.info-box .info-text
+{
+    font-size: 40px;
+}
+
+.info-box.addinfo .info-text
+{
+    font-size: 20px;
+}
+
+/*-- info area colours --*/
+.info-box.name .info-text
+{
+    color: #eabef4;
+}
+
+.info-box.material .info-text
+{
+    color: #6bb8ef;
+}
+
+.info-box.place .info-text
+{
+    color: #e669c6;
+}
+
+.info-box.time .info-text
+{
+    color: #42eacb;
+}
