@@ -43,6 +43,7 @@ body
 /*-- info box side --*/
 .info-box
 {
+    position: relative;
     width: 100%;
     min-height: 100px;
 }
@@ -74,10 +75,55 @@ body
     font-size: 20px;
 }
 
+/*-- hide system css --*/
+.info-box .show-info
+{
+    opacity: 0;
+    user-select: none;
+    transition: opacity .2s;
+}
+
+.info-box .hide-label
+{
+    position: absolute;
+    font-size: 25px;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 50px;
+    margin-left: -50px;
+    margin-top: -25px;
+    padding-top: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .2s 10ms,visibility 0s 0s;
+}
+
+.info-box.show .show-info
+{
+    opacity: 1;
+}
+
+.info-box.show .hide-label
+{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s 0s,visibility 0s .2s;
+}
+
 /*-- info area colours --*/
 .info-box.name .info-text
 {
     color: #eabef4;
+}
+
+.info-box.name .hide-label
+{
+    color: white;
+    background-color: #eabef4;
 }
 
 .info-box.material .info-text
