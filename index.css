@@ -131,12 +131,33 @@ body
     color: #6bb8ef;
 }
 
+.info-box.material .hide-label
+{
+    background-color: #6bb8ef;
+}
+
 .info-box.place .info-text
 {
     color: #e669c6;
 }
 
+.info-box.place .hide-label
+{
+    background-color: #e669c6;
+}
+
 .info-box.time .info-text
 {
     color: #42eacb;
+}
+
+.info-box.time .hide-label
+{
+    background-color: #42eacb;
+}
+
+.info-box.addinfo .hide-label
+{
+    background-color: rgba(255,255,255,.8);
+    color: #2a3436;
 }
