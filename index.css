@@ -100,6 +100,13 @@ body
     opacity: 1;
     visibility: visible;
     transition: opacity .2s 10ms,visibility 0s 0s;
+    user-select: none;
+    cursor: pointer;
+}
+
+.info-box .hide-label:hover
+{
+    opacity: .7;
 }
 
 .info-box.show .show-info
