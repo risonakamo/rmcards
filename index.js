@@ -13,7 +13,7 @@ class cardHandler
         this.infoButtons=infoZone.querySelectorAll(".hide-label");
         this.initinfoButtons();
 
-        this.cards=[];
+        this.cards;
         this.currentCard=0;
 
         this.keyControl(doc);
@@ -49,7 +49,23 @@ class cardHandler
 
     loadData(data)
     {
+        this.cards=data;
+        this.loadCard(data[0]);
+    }
 
+    loadCard(card)
+    {
+        this.resetInfoButtons();
+        this.infoTexts[0].innerText=card.name;
+        this.infoTexts[1].innerText=card.material;
+        this.infoTexts[2].innerText=card.place;
+        this.infoTexts[3].innerText=card.time;
+        this.displayImg.src=card.img;
+
+        if (card.note)
+        {
+            this.infoTexts[4].innerText=card.note;
+        }
     }
 }
 
@@ -58,4 +74,20 @@ var cardhandler;
 function main()
 {
     cardhandler=new cardHandler();
+
+    loadCardData("testdata.json",(res)=>{
+        console.log(res);
+    });
+}
+
+function loadCardData(path,callback)
+{
+    var r=new XMLHttpRequest();
+    r.open("GET",file);
+
+    r.onreadystatechange=()=>{
+        callback(JSON.parse(r.response).data);
+    };
+
+    r.send();
 }
