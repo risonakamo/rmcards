@@ -12,6 +12,11 @@ class cardHandler
         this.infoTexts=infoZone.querySelectorAll(".info-text");
         this.infoButtons=infoZone.querySelectorAll(".hide-label");
         this.initinfoButtons();
+
+        this.cards=[];
+        this.currentCard=0;
+
+        this.keyControl(doc);
     }
 
     initinfoButtons()
@@ -22,11 +27,35 @@ class cardHandler
             });
         });
     }
+
+    resetInfoButtons()
+    {
+        this.infoBoxes[0].classList.remove("show");
+        this.infoBoxes[1].classList.remove("show");
+        this.infoBoxes[2].classList.remove("show");
+        this.infoBoxes[3].classList.remove("show");
+        this.infoBoxes[4].classList.remove("show");
+    }
+
+    keyControl(doc)
+    {
+        doc.addEventListener("keydown",(e)=>{
+            if (e.key=="ArrowRight")
+            {
+                this.resetInfoButtons();
+            }
+        });
+    }
+
+    loadData(data)
+    {
+
+    }
 }
 
 var cardhandler;
 
 function main()
 {
-    var cardhandler=new cardHandler();
+    cardhandler=new cardHandler();
 }
