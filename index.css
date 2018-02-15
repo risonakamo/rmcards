@@ -80,7 +80,6 @@ body
 {
     opacity: 0;
     user-select: none;
-    transition: opacity .2s;
 }
 
 .info-box .hide-label
@@ -99,7 +98,7 @@ body
     border-radius: 4px;
     opacity: 1;
     visibility: visible;
-    transition: opacity .2s 10ms,visibility 0s 0s;
+    transition: opacity .2s 0s,visibility 0s 0s;
     user-select: none;
     cursor: pointer;
 }
@@ -112,6 +111,7 @@ body
 .info-box.show .show-info
 {
     opacity: 1;
+    transition: opacity .2s;
 }
 
 .info-box.show .hide-label
