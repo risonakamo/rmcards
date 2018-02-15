@@ -32,8 +32,16 @@ body
     width: 50%;
     height: 100%;
     vertical-align: top;
-    text-align: center;
     overflow: auto;
+}
+
+.img-zone
+{
+    position: relative;
+    text-align: center;
+    /*temp background colour/shadow!!!!!!!!!*/
+    background-color:#1b1d1d;
+    box-shadow: 1px 2px 20px 6px #1f1f1fab;
 }
 
 .img-zone img
@@ -48,12 +56,39 @@ body
     height: 100%;
 }
 
+.img-zone .nav-button
+{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    cursor: pointer;
+    background-color: rgba(214,252,253,0);
+    transition: background-color .2s;
+}
+
+.nav-button:hover
+{
+    background-color: rgba(214,252,253,.06);
+}
+
+.nav-button.prev
+{
+    left: 0;
+}
+
+.nav-button.next
+{
+    right: 0;
+}
+
 /*-- info box side --*/
 .info-box
 {
     position: relative;
     width: 100%;
     min-height: 100px;
+    margin-bottom: 16px;
 }
 
 .info-box .info-label,.info-box .info-text

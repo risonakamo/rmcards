@@ -8,6 +8,29 @@ class cardHandler
 
         this.imgZone=doc.querySelector(".img-zone");
         this.displayImg=this.imgZone.children[0];
+        this.navButtons=this.imgZone.querySelectorAll(".nav-button");
+
+        var infoZone=doc.querySelector(".info-zone");
+        this.infoBoxes=infoZone.querySelectorAll(".info-box");
+        this.infoTexts=infoZone.querySelectorAll(".info-text");
+        this.infoButtons=infoZone.querySelectorAll(".hide-label");
+
+        this.initEvents();
+
+        this.cards;
+        this.currentCard=0;
+
+        this.keyControl(doc);
+    }
+
+    initEvents()
+    {
+        //show/hide label buttons
+        this.infoButtons.forEach((i,x)=>{
+            i.addEventListener("click",(e)=>{
+                this.infoBoxes[x].classList.add("show");
+            });
+        });
 
         this.displayImg.addEventListener("load",()=>{
             this.fitImg();
@@ -17,24 +40,12 @@ class cardHandler
             this.fitImg();
         });
 
-        var infoZone=doc.querySelector(".info-zone");
-        this.infoBoxes=infoZone.querySelectorAll(".info-box");
-        this.infoTexts=infoZone.querySelectorAll(".info-text");
-        this.infoButtons=infoZone.querySelectorAll(".hide-label");
-        this.initinfoButtons();
+        this.navButtons[0].addEventListener("click",(e)=>{
+            this.navigateCard(this.currentCard-1);
+        });
 
-        this.cards;
-        this.currentCard=0;
-
-        this.keyControl(doc);
-    }
-
-    initinfoButtons()
-    {
-        this.infoButtons.forEach((i,x)=>{
-            i.addEventListener("click",(e)=>{
-                this.infoBoxes[x].classList.add("show");
-            });
+        this.navButtons[1].addEventListener("click",(e)=>{
+            this.navigateCard(this.currentCard+1);
         });
     }
 
