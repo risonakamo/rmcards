@@ -6,6 +6,13 @@
             "time":"800s",
             "place":"vulci",
             "img":"test1.png"
+        },
+        {
+            "name":"votive stele with priest holding a child",
+            "material":"dark limestone",
+            "time":"400s",
+            "place":"carthage",
+            "img":"test2.png"
         }
     ]
 }

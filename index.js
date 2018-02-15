@@ -42,7 +42,12 @@ class cardHandler
         doc.addEventListener("keydown",(e)=>{
             if (e.key=="ArrowRight")
             {
-                this.resetInfoButtons();
+                this.navigateCard(this.currentCard+1);
+            }
+
+            else if (e.key=="ArrowLeft")
+            {
+                this.navigateCard(this.currentCard-1);
             }
         });
     }
@@ -67,6 +72,16 @@ class cardHandler
             this.infoTexts[4].innerText=card.note;
         }
     }
+
+    navigateCard(pos)
+    {
+        if (pos>=0 && pos<this.cards.length)
+        {
+            this.resetInfoButtons();
+            this.loadCard(this.cards[pos]);
+            this.currentCard=pos;
+        }
+    }
 }
 
 var cardhandler;
@@ -76,17 +91,20 @@ function main()
     cardhandler=new cardHandler();
 
     loadCardData("testdata.json",(res)=>{
-        console.log(res);
+        cardhandler.loadData(res);
     });
 }
 
-function loadCardData(path,callback)
+function loadCardData(datafile,callback)
 {
     var r=new XMLHttpRequest();
-    r.open("GET",file);
+    r.open("GET",datafile);
 
     r.onreadystatechange=()=>{
-        callback(JSON.parse(r.response).data);
+        if (r.readyState==4)
+        {
+            callback(JSON.parse(r.response).data);
+        }
     };
 
     r.send();
