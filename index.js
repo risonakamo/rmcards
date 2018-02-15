@@ -5,7 +5,17 @@ class cardHandler
     constructor()
     {
         var doc=document;
-        this.displayImg=doc.querySelector(".img-zone img");
+
+        this.imgZone=doc.querySelector(".img-zone");
+        this.displayImg=this.imgZone.children[0];
+
+        this.displayImg.addEventListener("load",()=>{
+            this.fitImg();
+        });
+
+        window.addEventListener("resize",()=>{
+            this.fitImg();
+        });
 
         var infoZone=doc.querySelector(".info-zone");
         this.infoBoxes=infoZone.querySelectorAll(".info-box");
@@ -65,6 +75,7 @@ class cardHandler
         this.infoTexts[1].innerText=card.material;
         this.infoTexts[2].innerText=card.place;
         this.infoTexts[3].innerText=card.time;
+
         this.displayImg.src=card.img;
 
         if (card.note)
@@ -80,6 +91,21 @@ class cardHandler
             this.resetInfoButtons();
             this.loadCard(this.cards[pos]);
             this.currentCard=pos;
+        }
+    }
+
+    fitImg()
+    {
+        if ((this.imgZone.offsetWidth/this.imgZone.offsetHeight)>(this.displayImg.naturalWidth/this.displayImg.naturalHeight))
+        {
+            this.displayImg.classList.add("tall");
+            this.displayImg.style.marginTop=0;
+        }
+
+        else
+        {
+            this.displayImg.classList.remove("tall");
+            this.displayImg.style.marginTop=(this.imgZone.offsetHeight-this.displayImg.offsetHeight)/2+"px";
         }
     }
 }

@@ -32,12 +32,19 @@ body
     width: 50%;
     height: 100%;
     vertical-align: top;
+    text-align: center;
 }
 
 .img-zone img
 {
     width: 100%;
     height: auto;
+}
+
+.img-zone img.tall
+{
+    width: auto;
+    height: 100%;
 }
 
 /*-- info box side --*/
