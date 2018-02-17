@@ -13,6 +13,12 @@ class cardHandler
         this.infoTexts=infoZone.querySelectorAll(".info-text");
         this.infoButtons=infoZone.querySelectorAll(".hide-label");
 
+        var progressBox=infoZone.querySelector(".progress-box");
+        progressBox.addEventListener("click",()=>{
+            this.resetCards();
+        });
+        this.progressNumbers=progressBox.querySelectorAll("span");
+
         this.initEvents();
 
         this.cards;
@@ -78,6 +84,7 @@ class cardHandler
     loadData(data)
     {
         this.cards=data;
+        this.progressNumbers[1].innerText=this.cards.length;
         this.resetCards();
     }
 
@@ -107,6 +114,7 @@ class cardHandler
             this.resetInfoButtons();
             this.loadCard(this.cards[pos]);
             this.currentCard=pos;
+            this.progressNumbers[0].innerText=pos+1;
         }
     }
 
@@ -131,5 +139,7 @@ class cardHandler
     {
         randomiseArray(this.cards);
         this.loadCard(this.cards[0]);
+        this.currentCard=0;
+        this.progressNumbers[0].innerText=1;
     }
 }

@@ -3,12 +3,14 @@ class cardHandler
     cardHandler();
 
     element imgZone;
-    element displayImg;
+    element displayImg; //current displayed img image element
     element[] navButtons;
 
     element[] infoBoxes;
     element[] infoTexts;
     element[] infoButtons;
+
+    element[] progressNumbers;
 
     object-array cards;
     int currentCard;

@@ -9,6 +9,9 @@ function main()
     loadCardData("rm-quiz1.json",(res)=>{
         cardhandler.loadData(res);
     });
+
+    window.scrollTo(0,1);
+    window.scrollTo(0,0);
 }
 
 function loadCardData(datafile,callback)
