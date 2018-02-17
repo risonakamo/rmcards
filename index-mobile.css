@@ -1,0 +1,13 @@
+@media (max-height: 500px)
+{
+    body
+    {
+        margin-top: 1px;
+        transform: translateY(-1px);
+    }
+
+    .img-zone .nav-button:hover,.info-zone > .progress-box:hover
+    {
+        background-color: transparent;
+    }
+}

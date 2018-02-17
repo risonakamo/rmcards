@@ -8,12 +8,12 @@ class cardHandler
         this.displayImg=this.imgZone.children[0];
         this.navButtons=this.imgZone.querySelectorAll(".nav-button");
 
-        var infoZone=doc.querySelector(".info-zone");
-        this.infoBoxes=infoZone.querySelectorAll(".info-box");
-        this.infoTexts=infoZone.querySelectorAll(".info-text");
-        this.infoButtons=infoZone.querySelectorAll(".hide-label");
+        this.infoZone=doc.querySelector(".info-zone");
+        this.infoBoxes=this.infoZone.querySelectorAll(".info-box");
+        this.infoTexts=this.infoZone.querySelectorAll(".info-text");
+        this.infoButtons=this.infoZone.querySelectorAll(".hide-label");
 
-        var progressBox=infoZone.querySelector(".progress-box");
+        var progressBox=this.infoZone.querySelector(".progress-box");
         progressBox.addEventListener("click",()=>{
             this.resetCards();
         });
@@ -103,6 +103,8 @@ class cardHandler
         {
             this.infoTexts[4].innerText=card.note;
         }
+
+        this.infoZone.scrollTo(0,0);
     }
 
     //navigate to a card at given position in current card array,
