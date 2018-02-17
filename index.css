@@ -82,6 +82,22 @@ body
     right: 0;
 }
 
+.info-zone .progress-box
+{
+    width: 100%;
+    font-size: 22px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 16px 0 16px 0;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.info-zone .progress-box:hover
+{
+    background-color: rgba(214,252,253,.06);
+}
+
 /*-- info box side --*/
 .info-box
 {
