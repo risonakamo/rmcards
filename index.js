@@ -10,7 +10,7 @@ function main()
         cardhandler.loadData(res);
     });
 
-    var screenDiff=window.innerHeight-document.body.scrollHeight;
+    var screenDiff=window.innerHeight-document.body.clientHeight;
     if (screenDiff>0)
     {
         document.body.style.marginTop=`${screenDiff}px`;
