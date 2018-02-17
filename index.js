@@ -9,8 +9,6 @@ function main()
     loadCardData("rm-quiz1.json",(res)=>{
         cardhandler.loadData(res);
     });
-
-    document.body.requestFullscreen();
 }
 
 function loadCardData(datafile,callback)
