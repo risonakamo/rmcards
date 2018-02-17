@@ -12,8 +12,6 @@ class cardHandler
 
     element[] progressNumbers;
 
-    int requestedFullscreen;
-
     object-array cards;
     int currentCard;
 

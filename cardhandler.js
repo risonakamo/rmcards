@@ -13,15 +13,8 @@ class cardHandler
         this.infoTexts=infoZone.querySelectorAll(".info-text");
         this.infoButtons=infoZone.querySelectorAll(".hide-label");
 
-        this.requestedFullscreen=0;
         var progressBox=infoZone.querySelector(".progress-box");
         progressBox.addEventListener("click",()=>{
-            if (!this.requestedFullscreen)
-            {
-                doc.body.webkitRequestFullscreen();
-                this.requestedFullscreen=1;
-            }
-
             this.resetCards();
         });
         this.progressNumbers=progressBox.querySelectorAll("span");

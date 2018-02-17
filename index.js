@@ -9,6 +9,13 @@ function main()
     loadCardData("rm-quiz1.json",(res)=>{
         cardhandler.loadData(res);
     });
+
+    var screenDiff=window.innerHeight-document.body.scrollHeight;
+    if (screenDiff>0)
+    {
+        document.body.style.marginTop=`${screenDiff}px`;
+        document.querySelector(".img-zone").style.backgroundColor="red";
+    }
 }
 
 function loadCardData(datafile,callback)
