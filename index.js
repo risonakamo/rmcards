@@ -10,7 +10,7 @@ function main()
         cardhandler.loadData(res);
     });
 
-    document.documentElement.requestFullscreen();
+    document.body.requestFullscreen();
 }
 
 function loadCardData(datafile,callback)
