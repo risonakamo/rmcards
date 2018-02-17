@@ -18,7 +18,7 @@ class cardHandler
         progressBox.addEventListener("click",()=>{
             if (!this.requestedFullscreen)
             {
-                doc.body.requestFullscreen();
+                doc.body.webkitRequestFullscreen();
                 this.requestedFullscreen=1;
             }
 
