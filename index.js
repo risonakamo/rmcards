@@ -127,7 +127,7 @@ function main()
 {
     cardhandler=new cardHandler();
 
-    loadCardData("testdata.json",(res)=>{
+    loadCardData("rm-quiz1.json",(res)=>{
         cardhandler.loadData(res);
     });
 }
