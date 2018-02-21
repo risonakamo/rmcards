@@ -130,6 +130,7 @@ class cardHandler
         if (pos>=0 && pos<this.cards.length)
         {
             this.resetInfoButtons();
+            this.saveCurrentNote();
             this.loadCard(this.cards[pos]);
             this.currentCard=pos;
             this.progressNumbers[0].innerText=pos+1;
