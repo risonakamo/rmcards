@@ -7,13 +7,15 @@ class cardHandler
     element[] navButtons;
 
     element[] infoBoxes;
-    element[] infoTexts;
+    element[] infoTexts; //elements to load in data: [name,material,place,time,note]
     element[] infoButtons;
 
     element[] progressNumbers;
 
     object-array cards;
     int currentCard;
+
+    object storedNotes;
 
     /*-- init --*/
     void initEvents();

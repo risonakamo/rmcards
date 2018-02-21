@@ -24,6 +24,12 @@ class cardHandler
         this.cards;
         this.currentCard=0;
 
+        this.storedNotes=window.localStorage.getItem("rm-quiz1");
+        if (!this.storedNotes)
+        {
+            this.storedNotes={};
+        }
+
         this.keyControl(doc);
     }
 
@@ -99,9 +105,19 @@ class cardHandler
 
         this.displayImg.src=card.img;
 
-        if (card.note)
+        if (this.storedNotes[card.id])
         {
-            this.infoTexts[4].innerText=card.note;
+            this.infoTexts[4].innerText=this.storedNotes[card.id];
+        }
+
+        // if (card.note)
+        // {
+        //     this.infoTexts[4].innerText=card.note;
+        // }
+
+        else
+        {
+            this.infoTexts[4].innerText="";
         }
 
         this.infoZone.scrollTo(0,0);
@@ -143,5 +159,15 @@ class cardHandler
         this.loadCard(this.cards[0]);
         this.currentCard=0;
         this.progressNumbers[0].innerText=1;
+    }
+
+    saveCurrentNote()
+    {
+        var noteText=this.infoTexts[4].innerText;
+
+        if (noteText)
+        {
+            this.storedNotes[this.cards[this.currentCard].id]=noteText;
+        }
     }
 }
