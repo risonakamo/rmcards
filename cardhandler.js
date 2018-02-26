@@ -13,6 +13,8 @@ class cardHandler
         this.infoTexts=this.infoZone.querySelectorAll(".info-text");
         this.infoButtons=this.infoZone.querySelectorAll(".hide-label");
 
+        this.preloadzone=doc.querySelector(".preload-zone");
+
         var progressBox=this.infoZone.querySelector(".progress-box");
         progressBox.addEventListener("click",()=>{
             this.resetCards();
@@ -92,6 +94,7 @@ class cardHandler
         this.cards=data;
         this.progressNumbers[1].innerText=this.cards.length;
         this.resetCards();
+        // this.preloadtest();
     }
 
     //load the given object as a card
@@ -169,6 +172,17 @@ class cardHandler
         if (noteText)
         {
             this.storedNotes[this.cards[this.currentCard].id]=noteText;
+        }
+    }
+
+    preloadtest()
+    {
+        for (var x=0;x<this.cards.length;x++)
+        {
+            this.preloadzone.insertAdjacentHTML("beforeend",`<img src="${this.cards[x].img}">`);
+
+            // var a=new Image();
+            // a.src=this.cards[x].img;
         }
     }
 }

@@ -12,6 +12,8 @@ class cardHandler
 
     element[] progressNumbers;
 
+    element preloadzone;
+
     object-array cards;
     int currentCard;
 
@@ -30,4 +32,6 @@ class cardHandler
     void resetInfoButtons();
     void fitImg();
     void resetCards();
+
+    void preloadtest();
 }
