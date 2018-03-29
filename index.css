@@ -3,13 +3,13 @@
 @font-face
 {
     font-family: "noto-reg";
-    src: url("noto-reg.otf");
+    src: url("font/noto-reg.otf");
 }
 
 @font-face
 {
     font-family: "noto-bold";
-    src: url("noto-bold.otf");
+    src: url("font/noto-bold.otf");
 }
 
 html,body

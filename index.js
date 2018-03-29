@@ -6,7 +6,7 @@ function main()
 {
     cardhandler=new cardHandler();
 
-    loadCardData("rm-quiz1.json",(res)=>{
+    loadCardData("data/quiz2.json",(res)=>{
         cardhandler.loadData(res);
     });
 }
